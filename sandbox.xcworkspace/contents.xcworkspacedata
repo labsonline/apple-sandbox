@@ -2,6 +2,21 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ChatPrototype/ChatPrototype.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iTour/iTour.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Landmark/Landmark.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:NeverForget/NeverForget.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Portfolio/Portfolio.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:iOS.playground">
    </FileRef>
    <FileRef
