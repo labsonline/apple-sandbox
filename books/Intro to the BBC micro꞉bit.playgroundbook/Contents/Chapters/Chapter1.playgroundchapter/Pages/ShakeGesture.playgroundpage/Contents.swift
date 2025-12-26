@@ -1,0 +1,99 @@
+//#-hidden-code
+//
+//  Contents.swift
+//
+//#-end-hidden-code
+/*:#localized(key: "Page5Narrative")
+ One of the many cool features of the BBC micro:bit is the many ways that you can interact with it to make it do things.
+ 
+ We have already seen how pressing buttons can make the micro:bit work, but there are other ways too.
+ 
+ Just like smartphones and tablet devices, the micro:bit has a built in ‘accelerometer’ which determines the tilting motion and orientation of the device. This means it can tell which way up it is in space.
+ 
+ So the accelerometer can be used to get the micro:bit to detect when it is moved, or in this case, shaken.
+ 
+ To do this let us revisit the ‘Rock, Paper, Scissors’ game you developed in the previous lesson. In that program you had to press a button to get the code to run, but it would be much more fun (and realistic) if you could get the micro:bit to react each time you *shake* it.
+ 
+ 1. Look at the slightly modified version of the previous ‘Rock, Paper, Scissors’ program below.
+ 
+ 2. Click to select the text for the `onButtonPressed` function. Change this function to `onGesture`
+ 
+ 3. Tap in the box where you see `gesture` and select **shake** from the completion bar on the keyboard, or type in `shake` if you wish.
+ 
+ 4. Complete the remain boxes in a similar way to the previous Rock, Paper, Scissors activity.
+ 
+ 5. Run your code.
+ 
+ 6. Shake either your micro:bit (or the iPad if you are not using a micro:bit) and notice how it reacts.
+ 
+ 7. Repeat step 6 several times and notice that the shape displayed on your micro:bit should change randomly between the rock, paper and scissors shape.
+ 
+ There are many ways in which the accelerometer can be used on a micro:bit and in the next exercise we will see a different application for this useful feature.
+ */
+//#-hidden-code
+import PlaygroundSupport
+import Foundation
+ 
+ func random(in range: ClosedRange<Int>) -> Int {
+ return range.lowerBound + Int(arc4random_uniform(UInt32(range.count)))
+ }
+ 
+ let rock = createImage("""
+ .###.
+ ####.
+ .####
+ .###.
+ ####.
+ """)
+ 
+ let paper = createImage("""
+ ####.
+ #####
+ #####
+ #####
+ #####
+ """)
+ 
+ let scissors = iconImage(.scissors)
+
+let fist = createImage("""
+...#.
+.###.
+.####
+.###.
+.##..
+""")
+
+func animateFist() {
+    for _ in 1...3 {
+        for loop in 1...11 {
+            let yOffset = loop < 6 ? 6 - loop : loop - 6
+            let imageToDisplay = fist.imageOffsetBy(dy: yOffset)
+            imageToDisplay.showImage()
+            usleep(75_000)
+        }
+    }
+}
+
+//#-code-completion(everything, hide)
+//#-code-completion(currentmodule, show)
+//#-code-completion(identifier, show, shake)
+//#-code-completion(identifier, show, rock, paper, scissors)
+//#-code-completion(identifier, show, onGesture)
+//#-code-completion(identifier, hide, randomNumber, random(in:))
+
+//#-end-hidden-code
+clearScreen()
+/*#-editable-code*/onButtonPressed/*#-end-editable-code*/(./*#-editable-code*/<#T##gesture##BTMicrobit.Event.Gesture#>/*#-end-editable-code*/, handler: {
+    animateFist()
+    let randomNumber = random(in: /*#-editable-code*/<#T##lower bound##Int#>/*#-end-editable-code*/.../*#-editable-code*/<#T##upper bound##Int#>/*#-end-editable-code*/)
+    if randomNumber == 1 {
+        /*#-editable-code*/<#T##image##MicrobitImage#>/*#-end-editable-code*/.showImage()
+    }
+    if randomNumber == 2 {
+        /*#-editable-code*/<#T##image##MicrobitImage#>/*#-end-editable-code*/.showImage()
+    }
+    if randomNumber == 3 {
+        /*#-editable-code*/<#T##image##MicrobitImage#>/*#-end-editable-code*/.showImage()
+    }
+})
