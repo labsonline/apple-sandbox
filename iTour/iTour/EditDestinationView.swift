@@ -40,7 +40,9 @@ struct EditDestinationView: View {
       }
     }
     .navigationTitle("Edit Destination")
+#if os(iOS)
     .navigationBarTitleDisplayMode(.inline)
+#endif
   }
 
   func addSight() {
