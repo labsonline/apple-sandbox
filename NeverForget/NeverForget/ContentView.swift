@@ -5,6 +5,7 @@
 //  Created by Schubert Anselme on 2025-09-24.
 //
 
+#if canImport(AlarmKit)
 import AlarmKit
 import EventKit
 import SwiftUI
@@ -75,20 +76,8 @@ struct ContentView: View {
   }
 
   func scheduleAlarm(for event: EKEvent) async throws {
-    // let components = Calendar.current.dateComponents([.hour, .minute],
-    //                                                  from: event.startDate)
-    // let hour = components.hour ?? 0
-    // let minute = components.minute ?? 0
-   
-    // let time = Alarm.Schedule.Relative.Time(hour: hour, minute: minute)
-    // let relativeSchedule = Alarm.Schedule.Relative(time: time, repeats: .never)
-    // let schedule = Alarm.Schedule.relative(relativeSchedule)
-
     let schedule = Alarm.Schedule.fixed(event.startDate)
-    let alert = AlarmPresentation.Alert(title: .init(stringLiteral: event.title),
-                                        stopButton: AlarmButton(text: "Stop",
-                                                                textColor: .blue,
-                                                                systemImageName: "stop.circle"))
+    let alert = AlarmPresentation.Alert(title: .init(stringLiteral: event.title))
 
     let presentation = AlarmPresentation(alert: alert)
     let attributes = AlarmAttributes(presentation: presentation,
@@ -124,3 +113,69 @@ struct ContentView: View {
 #Preview {
   ContentView()
 }
+#else
+
+import EventKit
+import SwiftUI
+
+struct ContentView: View {
+  @Environment(\.scenePhase) private var scenePhase
+
+  @State private var eventStore = EKEventStore()
+  @State private var events = [EKEvent]()
+
+  var body: some View {
+    NavigationStack {
+      List {
+        Section {
+          Text("AlarmKit not available. Build with AlarmKit or run on a supported SDK to enable alarms.")
+            .foregroundStyle(.secondary)
+        }
+        
+        ForEach(events, id: \.eventIdentifier) { event in
+          HStack {
+            VStack(alignment: .leading) {
+              Text(event.title)
+              Text(event.startDate, format: .dateTime.month().day().hour().minute())
+            }
+            Spacer()
+            Image(systemName: "bell.slash")
+              .foregroundStyle(.secondary)
+          }
+        }
+      }
+      .navigationTitle("Never Forget")
+    }
+    .onChange(of: scenePhase) {
+      if scenePhase == .active {
+        Task { try await loadEvents() }
+      }
+    }
+    .task {
+      try? await loadEvents()
+    }
+  }
+
+  func loadEvents() async throws {
+    guard try await eventStore.requestFullAccessToEvents() else { return }
+
+    let endDate = Date.now.offsetBy(days: 90, seconds: 0)
+    let predicate = eventStore.predicateForEvents(withStart: .now,
+                                                  end: endDate,
+                                                  calendars: nil)
+    let rawEvents = eventStore.events(matching: predicate)
+
+    let grouped = Dictionary(grouping: rawEvents, by: \.calendarItemIdentifier)
+    let firstInstances = grouped.compactMap { _, events in
+      events.min { $0.startDate < $1.startDate }
+    }
+
+    events = firstInstances.sorted { $0.startDate < $1.startDate }
+  }
+}
+
+#Preview {
+  ContentView()
+}
+
+#endif
