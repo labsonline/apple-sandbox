@@ -49,7 +49,7 @@ struct HikeView: View {
 
 extension AnyTransition {
   static var moveAndFade: AnyTransition {
-    .asymmetric(
+    unsafe .asymmetric(
       insertion: .move(edge: .trailing).combined(with: .opacity),
       removal: .scale.combined(with: .opacity),
     )

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
 struct LandmarkDetail: View {
   @Environment(ModelData.self) var modelData
@@ -25,7 +26,7 @@ struct LandmarkDetail: View {
           .frame(height: 300)
 
         Button("Open in Maps") {
-          let destination = MKMapItem(placemark: MKPlacemark(coordinate: landmark.locationCoordiate))
+          let destination = MKMapItem(location: CLLocation(latitude: landmark.locationCoordiate.latitude, longitude: landmark.locationCoordiate.longitude), address: nil)
           destination.name = landmark.name
           destination.openInMaps()
         }
