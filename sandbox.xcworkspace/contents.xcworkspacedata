@@ -2,7 +2,19 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Alphabetizer/Alphabetizer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Birthdays/Birthdays.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ChatPrototype/ChatPrototype.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DiceRoller/DiceRoller.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:FriendsFavoriteMovies/FriendsFavoriteMovies.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:iTour/iTour.xcodeproj">
@@ -14,7 +26,22 @@
       location = "group:NeverForget/NeverForget.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:OnboardingFlow/OnboardingFlow.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pick-a-Pal/Pick-a-Pal.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Portfolio/Portfolio.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ScoreKeeper/ScoreKeeper.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WeatherForecast/WeatherForecast.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftTour.playground">
    </FileRef>
    <FileRef
       location = "group:iOS.playground">
