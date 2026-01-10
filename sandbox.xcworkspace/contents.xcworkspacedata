@@ -17,6 +17,9 @@
       location = "group:FriendsFavoriteMovies/FriendsFavoriteMovies.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:GratefulMoments/GratefulMoments.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:iTour/iTour.xcodeproj">
    </FileRef>
    <FileRef
