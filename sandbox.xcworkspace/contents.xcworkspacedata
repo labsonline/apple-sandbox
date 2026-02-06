@@ -44,6 +44,9 @@
       location = "group:WeatherForecast/WeatherForecast.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:HikingSurvey/HikingSurvey.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SwiftTour.playground">
    </FileRef>
    <FileRef
