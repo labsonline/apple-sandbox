@@ -47,6 +47,9 @@
       location = "group:HikingSurvey/HikingSurvey.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:SignDecoder/SignDecoder.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SwiftTour.playground">
    </FileRef>
    <FileRef
