@@ -1,0 +1,80 @@
+{
+  "activityEntities" : [
+
+  ],
+  "createdDate" : "2026-02-06T20:29:41Z",
+  "dataPathRelativeToProjectURL" : "../TrailData/Trail1k.csv/",
+  "dataResult" : {
+    "columnTypes" : [
+      "Int",
+      "Int",
+      "String",
+      "Int",
+      "Int"
+    ],
+    "columnValues" : [
+      "1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3",
+      "0, 0, 0, 0, 0, 0, 0, 300, 300, 300, 300, 0, 0, 0, 0, 0, 0, 0, 0, 300, 300, 0, 0, 0, 0, 0, 0, 0, 0, 300",
+      "paved, sandy, sandy, sandy, sandy, sandy, sandy, paved, paved, paved, sandy, paved, paved, paved, paved, sandy, sandy, sandy, sandy, paved, paved, paved, paved, paved, paved, sandy, sandy, sandy, sandy, paved",
+      "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0",
+      "1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4"
+    ],
+    "columns" : [
+      "distance",
+      "elevation",
+      "terrain",
+      "dangerous",
+      "risk"
+    ],
+    "createdDate" : "2026-02-06T20:29:41Z",
+    "dataAnalysis" : {
+      "classifierAnalysis" : {
+
+      },
+      "issues" : [
+        {
+          "description" : "No target selected",
+          "severity" : "notReady"
+        },
+        {
+          "description" : "Data has 1000 rows",
+          "severity" : "info"
+        },
+        {
+          "description" : "No features selected",
+          "severity" : "notReady"
+        }
+      ],
+      "objectDetectorAnalysis" : {
+        "details" : {
+
+        }
+      },
+      "summary" : {
+        "canUseValidation" : 1,
+        "sampleCount" : 1000
+      }
+    },
+    "dataSourceID" : "149AA946-E159-43A9-B5AD-D92374D9B58F",
+    "dataURL" : "file:///Users/sanselme/WorkSpace/playground/apple/TrailData/Trail1k.csv",
+    "error" : {
+      "code" : 1000,
+      "domain" : "composer.error.domain",
+      "errorType" : "notReady",
+      "reason" : "No target selected"
+    },
+    "itemsCount" : 1000
+  },
+  "dataURL" : "file:///Users/sanselme/WorkSpace/playground/apple/TrailData/Trail1k.csv",
+  "experimentIDs" : [
+    "11F18C5F-0046-4AC2-9CFF-5F78946572F7",
+    "9193ACF4-D40C-478F-A202-C9B47B31A784",
+    "024DD23A-FCC5-4276-98FF-BA391A86434C"
+  ],
+  "id" : "149AA946-E159-43A9-B5AD-D92374D9B58F",
+  "modifiedDate" : "2026-02-06T20:35:53Z",
+  "pathType" : 0,
+  "preferredFilename" : "Trail1k.csv",
+  "title" : "Trail1k.csv",
+  "version" : "1.0"
+}

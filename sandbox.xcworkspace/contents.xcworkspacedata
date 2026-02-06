@@ -50,6 +50,9 @@
       location = "group:SignDecoder/SignDecoder.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:TrailAnalyzer/TrailAnalyzer.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SwiftTour.playground">
    </FileRef>
    <FileRef

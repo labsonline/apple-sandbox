@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2026-02-06T20:27:35Z",
+        "event" : "projectCreated",
+        "id" : "B3B08E5F-E3A8-4D30-AD9D-590F7F22DED3",
+        "subtitle" : "TrailAnalyzer",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Schubert Anselme",
+  "createdDate" : "2026-02-06T20:27:35Z",
+  "description" : "",
+  "id" : "7F9B505D-4E09-4603-B1A2-F166CB97A2A8",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2026-02-06T20:27:35Z",
+  "projectName" : "TrailAnalyzer",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "generalRegresor",
+  "title" : "Tabular Regression",
+  "version" : "1.1"
+}

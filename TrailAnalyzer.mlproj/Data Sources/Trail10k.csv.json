@@ -1,0 +1,127 @@
+{
+  "activityEntities" : [
+    "dataSourceTrainingStarted",
+    [
+      {
+        "createdDate" : "2026-02-06T20:30:18Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "951CF8FA-8095-412C-89AA-A958EE119B4C",
+        "subtitle" : "TrailAnalyzer 1",
+        "title" : "Used By"
+      },
+      {
+        "createdDate" : "2026-02-06T20:35:04Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "6D256008-7821-4CB0-81D6-FA4E5CB07C49",
+        "subtitle" : "Decision Tree",
+        "title" : "Used By"
+      },
+      {
+        "createdDate" : "2026-02-06T20:36:58Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "0D031813-0489-4C07-B556-90B4A2AF0098",
+        "subtitle" : "Linear Regression",
+        "title" : "Used By"
+      }
+    ],
+    "dataSourceMetrics",
+    [
+      {
+        "createdDate" : "2026-02-06T20:30:18Z",
+        "event" : "dataSourceMetrics",
+        "id" : "AF480C64-1CC5-4AE3-B5B7-1DD8FE371285",
+        "subtitle" : "10,000 Items",
+        "title" : "Data Summary"
+      },
+      {
+        "createdDate" : "2026-02-06T20:35:04Z",
+        "event" : "dataSourceMetrics",
+        "id" : "63E2ED6E-3737-46E0-B34C-9C6F4FE119CE",
+        "subtitle" : "10,000 Items",
+        "title" : "Data Summary"
+      },
+      {
+        "createdDate" : "2026-02-06T20:36:58Z",
+        "event" : "dataSourceMetrics",
+        "id" : "E9FB99CB-A5A6-4BC2-B8E1-F419A59F6CB4",
+        "subtitle" : "10,000 Items",
+        "title" : "Data Summary"
+      }
+    ]
+  ],
+  "createdDate" : "2026-02-06T20:27:45Z",
+  "dataPathRelativeToProjectURL" : "../TrailData/Trail10k.csv/",
+  "dataResult" : {
+    "columnTypes" : [
+      "Int",
+      "Int",
+      "String",
+      "Int",
+      "Int"
+    ],
+    "columnValues" : [
+      "1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1",
+      "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0",
+      "paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved, paved",
+      "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0",
+      "1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1"
+    ],
+    "columns" : [
+      "distance",
+      "elevation",
+      "terrain",
+      "dangerous",
+      "risk"
+    ],
+    "createdDate" : "2026-02-06T20:27:45Z",
+    "dataAnalysis" : {
+      "classifierAnalysis" : {
+
+      },
+      "issues" : [
+        {
+          "description" : "No target selected",
+          "severity" : "notReady"
+        },
+        {
+          "description" : "Data has 10000 rows",
+          "severity" : "info"
+        },
+        {
+          "description" : "No features selected",
+          "severity" : "notReady"
+        }
+      ],
+      "objectDetectorAnalysis" : {
+        "details" : {
+
+        }
+      },
+      "summary" : {
+        "canUseValidation" : 1,
+        "sampleCount" : 10000
+      }
+    },
+    "dataSourceID" : "5CDD2B91-9DFE-4400-A584-0A7EABF79B47",
+    "dataURL" : "file:///Users/sanselme/WorkSpace/playground/apple/TrailData/Trail10k.csv",
+    "error" : {
+      "code" : 1000,
+      "domain" : "composer.error.domain",
+      "errorType" : "notReady",
+      "reason" : "No target selected"
+    },
+    "itemsCount" : 10000
+  },
+  "dataURL" : "file:///Users/sanselme/WorkSpace/playground/apple/TrailData/Trail10k.csv",
+  "experimentIDs" : [
+    "11F18C5F-0046-4AC2-9CFF-5F78946572F7",
+    "9193ACF4-D40C-478F-A202-C9B47B31A784",
+    "024DD23A-FCC5-4276-98FF-BA391A86434C"
+  ],
+  "id" : "5CDD2B91-9DFE-4400-A584-0A7EABF79B47",
+  "modifiedDate" : "2026-02-06T20:36:58Z",
+  "pathType" : 0,
+  "preferredFilename" : "Trail10k.csv",
+  "title" : "Trail10k.csv",
+  "version" : "1.0"
+}
