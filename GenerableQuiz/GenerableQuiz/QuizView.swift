@@ -1,0 +1,91 @@
+//
+//  QuizView.swift
+//  GenerableQuiz
+//
+//  Created by Schubert Anselme on 2026-02-07.
+//
+
+import SwiftUI
+
+struct QuizView: View {
+  @Environment(QuizGenerator.self) private var generator
+
+  var body: some View {
+    NavigationStack {
+      ZStack {
+        content
+      }
+      .onAppear { generator.generateQuiz() }
+    }
+  }
+}
+
+private extension QuizView {
+  @ViewBuilder
+  var content: some View {
+    let lastQuestion = generator.quiz?.questions?.last
+
+    Color.gray.opacity(0.1)
+      .edgesIgnoringSafeArea(.all)
+
+    ScrollViewReader { value in
+      ScrollView {
+        quizStack
+      }
+      .onChange(of: lastQuestion?.answers?.count) {
+        withAnimation {
+          value.scrollTo(lastQuestion?.id)
+        }
+      }
+      .onChange(of: generator.isGenerating) {
+        withAnimation {
+          value.scrollTo(generator.quiz?.questions?.first?.id)
+        }
+      }
+    }
+
+    if generator.isGenerating {
+      HStack {
+        ProgressView()
+        Text("Generating...")
+      }
+      .frame(width: 200, height: 75)
+      .background(.ultraThinMaterial)
+      .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+  }
+
+  var quizStack: some View {
+    VStack(spacing: 16) {
+      if let error = generator.error {
+        Label(error.localizedDescription, systemImage: "xmark.circle")
+          .frame(maxWidth: .infinity, alignment: .leading)
+          .foregroundStyle(Color.red)
+          .padding(.horizontal)
+      }
+
+      if let questions = generator.quiz?.questions {
+        ForEach(questions) { question in
+          QuestionView(question: question)
+            .disabled(generator.isGenerating)
+            .padding(.vertical, 8)
+            .id(question.id)
+        }
+      }
+
+      Button { generator.generateQuiz() } label: {
+        Text("Start a new quiz")
+          .frame(maxWidth: .infinity)
+      }
+      .buttonStyle(.borderedProminent)
+      .padding()
+    }
+    .navigationTitle(generator.topic)
+    .padding()
+  }
+}
+
+#Preview {
+  QuizView()
+    .environment(QuizGenerator(topic: "Marine Life"))
+}

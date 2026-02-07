@@ -56,6 +56,9 @@
       location = "group:ImageGenerator/ImageGenerator.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:GenerableQuiz/GenerableQuiz.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SwiftTour.playground">
    </FileRef>
    <FileRef
