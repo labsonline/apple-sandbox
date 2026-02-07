@@ -53,6 +53,9 @@
       location = "group:TrailAnalyzer/TrailAnalyzer.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ImageGenerator/ImageGenerator.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SwiftTour.playground">
    </FileRef>
    <FileRef
